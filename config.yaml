@@ -1,0 +1,106 @@
+# Valhalla Orchestrator V2 - Application Configuration
+# This file contains default configuration values
+
+application:
+  name: "Valhalla AI Partnership Hub"
+  version: "2.0"
+  description: "Cloud-native AI command center with Vertex AI Claude integration"
+
+mission:
+  start_date: "2025-10-17"
+  deadline: "2026-01-15"
+  duration_days: 90
+  goal_revenue: 15000
+  currency: "USD"
+  philosophy: "Ship fast, iterate constantly, delegate to AI agents"
+
+projects:
+  haven_platform:
+    name: "HAVEN Platform"
+    status: "Live"
+    priority: 1
+    revenue_target: 10000
+    tech_stack:
+      - "FastAPI"
+      - "PostgreSQL"
+      - "Cloud Run"
+      - "React"
+
+  first_contact:
+    name: "First Contact"
+    status: "Building"
+    priority: 2
+    revenue_target: 3000
+    tech_stack:
+      - "TBD"
+
+  company_site:
+    name: "Company Site"
+    status: "Planning"
+    priority: 3
+    revenue_target: 2000
+    tech_stack:
+      - "Next.js"
+      - "TailwindCSS"
+      - "Vercel"
+
+vertex_ai:
+  default_model: "claude-3-5-sonnet@20240620"
+  default_region: "us-central1"
+
+  generation_config:
+    max_output_tokens: 4096
+    temperature: 0.7
+    top_p: 0.95
+
+  retry_config:
+    max_retries: 3
+    backoff_multiplier: 2
+    initial_delay: 1
+
+firestore:
+  collections:
+    - "mission"
+    - "projects"
+    - "conversations"
+    - "conversation_history"
+    - "executions"
+    - "analytics"
+
+  cache:
+    ttl_seconds: 300
+    enabled: true
+
+monitoring:
+  cloud_logging:
+    enabled: true
+    log_level: "INFO"
+
+  cost_tracking:
+    enabled: true
+    alert_threshold_daily: 10.0
+    alert_threshold_monthly: 100.0
+
+ui:
+  theme: "dark"
+  sidebar_state: "expanded"
+  layout: "wide"
+
+  colors:
+    primary: "#3b82f6"
+    success: "#10b981"
+    warning: "#f59e0b"
+    error: "#ef4444"
+    background: "#0a0e1a"
+
+features:
+  auto_save: true
+  conversation_history: true
+  cost_monitoring: true
+  health_checks: true
+  retry_logic: true
+
+limits:
+  max_conversation_length: 50
+  max_message_tokens: 100000
+  max_concurrent_requests: 5
