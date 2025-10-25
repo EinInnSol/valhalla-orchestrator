@@ -104,3 +104,16 @@ limits:
   max_conversation_length: 50
   max_message_tokens: 100000
   max_concurrent_requests: 5
+
+  # Cost control limits
+  max_daily_requests: 100
+  max_daily_cost: 5.00
+  max_monthly_cost: 100.00
+
+  # Alert thresholds
+  daily_cost_warning: 3.00
+  monthly_cost_warning: 75.00
+
+  # Auto-actions
+  pause_at_daily_limit: true
+  pause_at_monthly_limit: false  # Set to true for hard budget enforcement
